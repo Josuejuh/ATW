@@ -1,0 +1,22 @@
+sudo cp -r /home/atwjj01/Downloads/ATW0DVWA /var/www/html/
+
+--SE MODIFICA LA CONFIGURACION
+sudo nano /var/www/html/ATW0DVWA/config/config.inc.php.dist
+
+--Da permiso a todo, carpeta y subcarpetas
+chmod 777 -R
+
+--Elimina
+rm -r
+
+--Instalación de WAF
+sudo apt-get install libapache2-modsecurity
+
+--RUTAS PARA CORROBORAR LO DEL WAF
+
+select * from dvwa.users where 1=1
+<script></script> --> XSS (Reflected)
+
+/etc/apache2/security2.conf
+/usr/share/modsecurity-crs/
+/etc/modsecurity/
